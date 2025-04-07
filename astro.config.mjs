@@ -1,28 +1,51 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
+import { ion } from "starlight-ion-theme";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		starlight({
-			title: 'My Docs',
-			social: {
-				github: 'https://github.com/withastro/starlight',
-			},
-			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
-			],
-		}),
-	],
+  redirects: {
+    "/": "/en",
+  },
+  integrations: [
+    starlight({
+      title: "Drupal MCP",
+      logo: {
+        src: "./src/assets/logo.svg",
+      },
+      social: {
+        github: "https://github.com/Omedia/mcp-server-drupal",
+      },
+      defaultLocale: "en",
+      locales: {
+        en: {
+          label: "English",
+        },
+        fr: {
+          label: "Français",
+        },
+        es: {
+          label: "Español",
+        },
+        de: {
+          label: "Deutsch",
+        },
+        ja: {
+          label: "日本語",
+        },
+      },
+      sidebar: [
+        {
+          label: "Guides",
+          items: [{ label: "Example Guide", slug: "guides/example" }],
+        },
+        {
+          label: "Reference",
+          autogenerate: { directory: "reference" },
+        },
+      ],
+      customCss: ["./src/styles/drupal.css"],
+      plugins: [ion()],
+    }),
+  ],
 });

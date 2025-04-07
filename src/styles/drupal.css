@@ -1,0 +1,27 @@
+:root,
+:root[data-theme="light"] {
+  --sl-hue-accent: 205;
+  --sl-color-accent-low: #edf5fc;
+  --sl-color-accent: #0678be;
+  --sl-color-accent-high: #004b91;
+}
+
+:root[data-theme="dark"] {
+  --sl-hue-accent: 205;
+  --sl-color-accent-low: #0d2231;
+  --sl-color-accent: #3592d0;
+  --sl-color-accent-high: #64b3ea;
+}
+
+a.secondary {
+  background: linear-gradient(90deg, #ffb593, #f5322d);
+  color: white !important;
+  padding: 0.5rem 1rem;
+  border: none !important;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+a.secondary:hover {
+  background: linear-gradient(90deg, #ffb593, #c62822);
+}
