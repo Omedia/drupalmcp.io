@@ -4,6 +4,7 @@ import { ion } from "starlight-ion-theme";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://drupalmcp.io",
   redirects: {
     "/": "/en",
   },
@@ -36,16 +37,28 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: "About",
-          items: [{ label: "About", slug: "about" }],
+          label: "Introduction",
+          items: [{ label: "Introduction", slug: "introduction" }],
+        },
+        {
+          label: "Quick Setup",
+          items: [{ label: "Quick Setup", slug: "quick-setup" }],
         },
         {
           label: "Guides",
-          items: [{ label: "Example Guide", slug: "guides/example" }],
+          items: [{ label: "Guides", slug: "guides" }],
         },
         {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
+          label: "Drupal MCP Server",
+          items: [{ label: "Drupal MCP Server", slug: "drupal-mcp-server" }],
+        },
+        {
+          label: "Drupal MCP Client",
+          items: [{ label: "Drupal MCP Client", slug: "drupal-mcp-client" }],
+        },
+        {
+          label: "STDIO Binary",
+          items: [{ label: "STDIO Binary", slug: "stdio-binary" }],
         },
       ],
       customCss: ["./src/styles/drupal.css"],

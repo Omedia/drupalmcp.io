@@ -10,18 +10,22 @@ hero:
       link: en/guides/example/
       icon: right-arrow
       variant: primary
+      target: _blank
     - text: MCP Server Module
       link: https://drupal.org/project/mcp
       icon: external
       variant: secondary
+      target: _blank
     - text: MCP Client Module
       link: https://drupal.org/project/mcp_client
       icon: external
       variant: secondary
+      target: _blank
     - text: Get STDIO Binary
       link: https://github.com/omedia/mcp-server-drupal
       icon: external
       variant: secondary
+      target: _blank
 ---
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
@@ -43,6 +47,6 @@ MCP (Management Control Panel) is a centralized interface for efficiently managi
     Edit your `sidebar` and other config in `astro.config.mjs`.
   </Card>
   <Card title="Read the docs" icon="open-book">
-    Learn more in [the Starlight Docs](https://starlight.astro.build/).
+    Learn more in <a href="https://starlight.astro.build/" target="_blank">the Starlight Docs</a>.
   </Card>
 </CardGrid>

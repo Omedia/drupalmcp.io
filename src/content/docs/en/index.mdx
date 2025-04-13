@@ -1,48 +1,61 @@
 ---
-title: Welcome to Drupal MCP Docs
+title: Drupal MCP
+description: Documentation for Drupal MCP Server integration
 template: splash
 hero:
-  tagline: Prepare your Drupal to be ready for the agentic era by transforming it into an MCP server.
+  tagline: Integrate your Drupal site with AI using the Model Context Protocol
   image:
     file: ../../../assets/logo.svg
   actions:
     - text: Docs
-      link: en/guides/example/
+      link: /en/quick-setup
       icon: right-arrow
       variant: primary
+      target: _blank
     - text: MCP Server Module
       link: https://drupal.org/project/mcp
       icon: external
       variant: primary
+      target: _blank
     - text: MCP Client Module
       link: https://drupal.org/project/mcp_client
       icon: external
       variant: primary
+      target: _blank
     - text: Get STDIO Binary
       link: https://github.com/omedia/mcp-server-drupal
       icon: external
       variant: primary
+      target: _blank
 ---
 
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Power up your Drupal with MCP
-
-MCP (Management Control Panel) is a centralized interface for efficiently managing and controlling Drupal sites through standardized APIs. By transforming your Drupal instance into an MCP server, you unlock its potential as an AI-integrated system in the emerging agentic era, enabling automation, intelligent workflows, and seamless integration with modern AI tools. This documentation site provides comprehensive guides, references, and resources to help developers implement MCP capabilities in their Drupal projects, maximizing productivity and unlocking new possibilities.
-
-## Next steps
+## Explore Drupal MCP
 
 <CardGrid stagger>
-  <Card title="Update content" icon="pencil">
-    Edit `src/content/docs/index.mdx` to see this page change.
+  <Card title="Introduction" icon="information">
+    Learn about the Model Context Protocol and how Drupal integrates with it.
+    <a href="/en/introduction">Read more</a>
   </Card>
-  <Card title="Add new content" icon="add-document">
-    Add Markdown or MDX files to `src/content/docs` to create new pages.
+  <Card title="Quick Setup" icon="setting">
+    Get up and running with the Drupal MCP module in minutes.
+    <a href="/en/quick-setup">Read more</a>
   </Card>
-  <Card title="Configure your site" icon="setting">
-    Edit your `sidebar` and other config in `astro.config.mjs`.
+  <Card title="Comprehensive Guides" icon="open-book">
+    Detailed guides for setting up, configuring, and extending Drupal MCP.
+    <a href="/en/guides">Read more</a>
   </Card>
-  <Card title="Read the docs" icon="open-book">
-    Learn more in [the Starlight Docs](https://starlight.astro.build/).
+  <Card title="Drupal MCP Server" icon="server">
+    Learn how to use Drupal as an MCP server for AI applications.
+    <a href="/en/drupal-mcp-server">Read more</a>
+  </Card>
+  <Card title="Drupal MCP Client" icon="discord">
+    Connect LLM clients like Claude to your Drupal MCP server.
+    <a href="/en/drupal-mcp-client">Read more</a>
+  </Card>
+  <Card title="STDIO Binary" icon="terminal">
+    Use the STDIO binary for seamless integration with LLM applications.
+    <a href="/en/stdio-binary">Read more</a>
   </Card>
 </CardGrid>
