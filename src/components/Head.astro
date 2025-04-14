@@ -1,0 +1,9 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Head.astro';
+---
+
+<Default {...Astro.props}><slot /></Default>
+
+{/* Add header eye-follow script */}
+<script is:inline src="/js/eye-follow.js" defer></script> 

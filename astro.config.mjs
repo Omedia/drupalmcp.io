@@ -13,6 +13,7 @@ export default defineConfig({
       title: "Drupal MCP",
       logo: {
         src: "./src/assets/logo.svg",
+        replacesTitle: true,
       },
       social: {
         github: "https://github.com/Omedia/mcp-server-drupal",
@@ -63,6 +64,10 @@ export default defineConfig({
       ],
       customCss: ["./src/styles/drupal.css"],
       plugins: [ion()],
+      components: {
+        Head: './src/components/Head.astro',
+        Hero: './src/components/Hero.astro',
+      },
     }),
   ],
 });
