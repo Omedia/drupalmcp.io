@@ -2,9 +2,7 @@
 title: Concepts & Architecture
 description: Technical overview of the MCP architecture and design concepts
 ---
-# MCP JSON-RPC Implementation
-
-## Overview
+### MCP JSON-RPC Implementation
 
 The MCP module leverages Drupal's JSON-RPC module to implement the Model Context Protocol's communication layer. This document details how MCP extends and customizes the JSON-RPC functionality to support the MCP protocol requirements.
 

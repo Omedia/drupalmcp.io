@@ -83,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setupBlinking();
   
   function setupBlinking() {
-    const minBlinkInterval = 5000;  // Minimum time between blinks (ms) - increased from 2000
-    const maxBlinkInterval = 18000; // Maximum time between blinks (ms) - increased from 8000
+    const minBlinkInterval = 2000;  // Minimum time between blinks (ms) - increased from 2000
+    const maxBlinkInterval = 10000; // Maximum time between blinks (ms) - increased from 8000
     const blinkDuration = 150;      // How long the eyes stay fully closed (ms)
     const transitionTime = 60;      // Time for half-open/half-closed states (ms)
     let isBlinking = false;         // Flag to prevent overlapping blinks
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Start the first blink after a longer initial delay
-    const initialDelay = 3000 + Math.random() * 5000;
+    const initialDelay = 1000;
     setTimeout(startBlinking, initialDelay);
   }
 }); 
