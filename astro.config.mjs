@@ -39,27 +39,35 @@ export default defineConfig({
       sidebar: [
         {
           label: "Introduction",
-          items: [{ label: "Introduction", slug: "introduction" }],
+          items: [
+            { label: "What is MCP?", slug: "introduction/what-is-mcp" },
+            { label: "Drupal as an MCP Server", slug: "introduction/drupal-as-an-mcp-server" },
+            { label: "Key Components", slug: "introduction/key-components" },
+            { label: "Compatibility & Requirements", slug: "introduction/compatibility-requirements" },
+          ],
         },
         {
-          label: "Quick Setup",
-          items: [{ label: "Quick Setup", slug: "quick-setup" }],
+          label: "Getting Started",
+          items: [
+            { label: "Setup & Configure", slug: "getting-started/setup-configure" },
+            { label: "Integration Guides", slug: "getting-started/integration-guides" },
+            { label: "Troubleshooting", slug: "getting-started/troubleshooting" },
+          ],
         },
         {
-          label: "Guides",
-          items: [{ label: "Guides", slug: "guides" }],
+          label: "Developers",
+          items: [
+            { label: "Concepts & Architecture", slug: "developers/concepts-architecture" },
+            { label: "Create your Plugin", slug: "developers/create-plugin" },
+            { label: "Contributing", slug: "developers/contributing" },
+          ],
         },
         {
-          label: "Drupal MCP Server",
-          items: [{ label: "Drupal MCP Server", slug: "drupal-mcp-server" }],
-        },
-        {
-          label: "Drupal MCP Client",
-          items: [{ label: "Drupal MCP Client", slug: "drupal-mcp-client" }],
-        },
-        {
-          label: "STDIO Binary",
-          items: [{ label: "STDIO Binary", slug: "stdio-binary" }],
+          label: "Resources",
+          items: [
+            { label: "FAQ", slug: "resources/faq" },
+            { label: "Community", slug: "resources/community" },
+          ],
         },
       ],
       customCss: ["./src/styles/drupal.css"],
