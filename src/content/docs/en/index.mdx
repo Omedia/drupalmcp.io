@@ -28,7 +28,7 @@ hero:
         </g>
       </svg>
   actions:
-    - text: Docs
+    - text: Start Here
       link: /en/introduction/what-is-mcp/
       icon: right-arrow
       variant: primary
@@ -36,46 +36,43 @@ hero:
     - text: MCP Server Module
       link: https://drupal.org/project/mcp
       icon: external
-      variant: primary
+      variant: minimal
       target: _blank
     - text: MCP Client Module
       link: https://drupal.org/project/mcp_client
       icon: external
-      variant: primary
+      variant: minimal
       target: _blank
     - text: Get STDIO Binary
       link: https://github.com/omedia/mcp-server-drupal
       icon: external
-      variant: primary
+      variant: minimal
       target: _blank
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Explore Drupal MCP
+<div style={{marginBottom: '4rem', textAlign: 'center'}}>
+  ## Explore Drupal MCP
+</div>
 
-<CardGrid stagger>
-  <Card title="MCP Server" icon="server">
-    Learn how to Convert your Drupal site into an MCP server.
-    <a href="/en/mcp-server/setup-configure/">Read more</a>
+<CardGrid>
+  <Card title="MCP Server" icon="open-book">
+    Learn how to <a href="/en/mcp-server/setup-configure/">convert your Drupal site into an MCP server</a>.
   </Card>
   <Card title="MCP Client" icon="server">
-    Check the module on <a href="https://drupal.org/project/mcp_client">Drupal.org</a>
+    Check out the <a href="https://drupal.org/project/mcp_client">MCP Client module prototype on Drupal.org</a>.
   </Card>
   <Card title="Claude Desktop" icon="server">
-    Checkout how to connect your Drupal site to Claude Desktop.
-    <a href="/en/mcp-server/connect-to-llms/#claude-desktop">Read more</a>
+    <a href="/en/mcp-server/connect-to-llms/#claude-desktop">Connect Claude Desktop</a> to your Drupal site.
   </Card>
   <Card title="Claude Code" icon="server">
-    Checkout how to connect your Drupal site to Claude Code.
-    <a href="/en/mcp-server/connect-to-llms/#claude-code">Read more</a>
+    <a href="/en/mcp-server/connect-to-llms/#claude-code">Connect Claude Code</a> to your Drupal site.
   </Card>
   <Card title="Cursor" icon="terminal">
-    Checkout how to connect your Drupal site to Cursor.
-    <a href="/en/mcp-server/connect-to-llms/#cursor">Read more</a>
+    <a href="/en/mcp-server/connect-to-llms/#cursor">Connect Cursor</a> to your Drupal site.
   </Card>
   <Card title="STDIO Binary" icon="terminal">
-    Use the STDIO binary for seamless integration with LLM applications.
-    <a href="/en/developers/stdio-binary/">Read more</a>
+    <a href="/en/developers/stdio-binary/">Use the STDIO binary</a> for seamless integration with LLM applications.
   </Card>
 </CardGrid>
