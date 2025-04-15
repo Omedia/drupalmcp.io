@@ -6,52 +6,7 @@ description: Technical overview of the MCP architecture and design concepts
 
 The MCP module leverages Drupal's JSON-RPC module to implement the Model Context Protocol's communication layer. This document details how MCP extends and customizes the JSON-RPC functionality to support the MCP protocol requirements.
 
-```mermaid
-flowchart TD
-    Client[MCP Client] -->|JSON-RPC Request| McpPost["/mcp/post Endpoint"]
-    McpPost --> McpController[McpController]
-    
-    subgraph ControllerLayer["Controller Layer"]
-        McpController -->|Processes Request| McpAuth[MCP Authentication Provider]
-        McpAuth -->|If Authenticated| MCPHandler[mcp.jsonrpc.handler]
-        McpController -->|Error Handling| ErrorResponse[JSON-RPC Error Response]
-    end
-    
-    subgraph JSONRPCLayer["JSON-RPC Layer"]
-        MCPHandler -->|Method Discovery| MethodManager[McpJsonRpcMethodManager]
-        MethodManager -->|Loads Method Plugin| MethodPlugin[MCP JSON-RPC Method Plugin]
-    end
-    
-    subgraph MethodPlugins["Method Plugins"]
-        MethodPlugin -->|initialize| Initialize[Initialize.php]
-        MethodPlugin -->|resources/list| ResourcesList[ResourcesList.php]
-        MethodPlugin -->|resources/templates/list| TemplatesList[ResourceTemplatesList.php]
-        MethodPlugin -->|resources/read| ResourcesRead[ResourcesRead.php]
-        MethodPlugin -->|tools/list| ToolsList[ToolsList.php]
-        MethodPlugin -->|tools/call| ToolsCall[ToolsCall.php]
-    end
-    
-    subgraph MCPPluginLayer["MCP Plugin Layer"]
-        Initialize --- McpPluginManager[MCP Plugin Manager]
-        ResourcesList --- McpPluginManager
-        TemplatesList --- McpPluginManager
-        ResourcesRead --- McpPluginManager
-        ToolsList --- McpPluginManager
-        ToolsCall --- McpPluginManager
-        
-        McpPluginManager -->|Loads Plugins| McpPlugins[MCP Plugins]
-        McpPlugins -->|General| GeneralPlugin[General Plugin]
-        McpPlugins -->|Content| ContentPlugin[Content Plugin]
-        McpPlugins -->|AI Agents| AiAgentPlugin[AI Agent Plugin]
-        McpPlugins -->|AI Functions| AiFunctionPlugin[AI Function Plugin]
-    end
-    
-    McpPlugins -->|Execute Operations| Results[Operation Results]
-    Results --> Response[JSON-RPC Response]
-    Response --> Client
-```
-
-## JSON-RPC Customization
+### JSON-RPC Customization
 
 ### 1. Override of JsonRpcMethodManager
 
