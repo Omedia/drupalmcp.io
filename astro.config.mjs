@@ -23,18 +23,18 @@ export default defineConfig({
         en: {
           label: "English",
         },
-        fr: {
-          label: "Français",
-        },
-        es: {
-          label: "Español",
-        },
-        de: {
-          label: "Deutsch",
-        },
-        ja: {
-          label: "日本語",
-        },
+        // fr: {
+        //   label: "Français",
+        // },
+        // es: {
+        //   label: "Español",
+        // },
+        // de: {
+        //   label: "Deutsch",
+        // },
+        // ja: {
+        //   label: "日本語",
+        // },
       },
       sidebar: [
         {
