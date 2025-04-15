@@ -42,16 +42,15 @@ export default defineConfig({
           items: [
             { label: "What is MCP?", slug: "introduction/what-is-mcp" },
             { label: "Drupal as an MCP Server", slug: "introduction/drupal-as-an-mcp-server" },
-            { label: "Key Components", slug: "introduction/key-components" },
-            { label: "Compatibility & Requirements", slug: "introduction/compatibility-requirements" },
+            { label: "Key Components", slug: "introduction/key-components" }
           ],
         },
         {
-          label: "Getting Started",
+          label: "MCP Server",
           items: [
-            { label: "Setup & Configure", slug: "getting-started/setup-configure" },
-            { label: "Integration Guides", slug: "getting-started/integration-guides" },
-            { label: "Troubleshooting", slug: "getting-started/troubleshooting" },
+            { label: "Setup & Configure", slug: "mcp-server/setup-configure" },
+            { label: "Connect to LLMs", slug: "mcp-server/connect-to-llms" },
+            { label: "What next?", slug: "mcp-server/what-next" },
           ],
         },
         {
@@ -59,16 +58,17 @@ export default defineConfig({
           items: [
             { label: "Concepts & Architecture", slug: "developers/concepts-architecture" },
             { label: "Create your Plugin", slug: "developers/create-plugin" },
+            { label: "STDIO Binary", slug: "developers/stdio-binary" },
             { label: "Contributing", slug: "developers/contributing" },
           ],
         },
-        {
-          label: "Resources",
-          items: [
-            { label: "FAQ", slug: "resources/faq" },
-            { label: "Community", slug: "resources/community" },
-          ],
-        },
+        // {
+        //   label: "Resources",
+        //   items: [
+        //     { label: "FAQ", slug: "resources/faq" },
+        //     { label: "Community", slug: "resources/community" },
+        //   ],
+        // },
       ],
       customCss: ["./src/styles/drupal.css"],
       plugins: [ion()],
