@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import { ion } from "starlight-ion-theme";
-
 import icon from "astro-icon";
 
 // https://astro.build/config
