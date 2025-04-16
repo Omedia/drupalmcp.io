@@ -17,9 +17,9 @@ export default defineConfig({
       dark: "./src/assets/logo-dark.svg",
       replacesTitle: true,
     },
-    social: {
-      github: "https://github.com/Omedia/mcp-server-drupal",
-    },
+    // social: {
+    //   github: "https://github.com/Omedia/mcp-server-drupal",
+    // },
     defaultLocale: "en",
     locales: {
       en: {
