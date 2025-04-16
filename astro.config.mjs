@@ -13,7 +13,8 @@ export default defineConfig({
   integrations: [starlight({
     title: "Drupal MCP",
     logo: {
-      src: "./src/assets/logo.svg",
+      light: "./src/assets/logo-light.svg",
+      dark: "./src/assets/logo-dark.svg",
       replacesTitle: true,
     },
     social: {
