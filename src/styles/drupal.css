@@ -32,3 +32,7 @@ a.secondary {
 a.secondary:hover {
   background: linear-gradient(90deg, #ffb593, #c62822);
 }
+
+.hero .tagline a {
+  color: var(--sl-color-text-accent);
+}
