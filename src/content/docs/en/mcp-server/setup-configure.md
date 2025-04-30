@@ -30,7 +30,7 @@ The MCP module uses a plugin-based architecture that lets developers extend its 
 
 MCP comes with two optional submodules that provide useful plugins:
 
-- `mcp_extra` — exposes AI module function call actions
+- `mcp_extra` — exposes AI module function call actions (see [AI Plugins Configuration](/en/plugin-config/ai-plugins/))
 - `mcp_dev_tools` — allows access to Drush from LLMs
 
 Enabling both is highly recommended for getting the most out of MCP.

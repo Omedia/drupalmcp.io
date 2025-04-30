@@ -55,6 +55,12 @@ export default defineConfig({
         ],
       },
       {
+        label: "Plugins",
+        items: [
+          { label: "AI Plugins", slug: "plugin-config/ai-plugins" },
+        ],
+      },
+      {
         label: "Developers",
         items: [
           { label: "Concepts & Architecture", slug: "developers/concepts-architecture" },
