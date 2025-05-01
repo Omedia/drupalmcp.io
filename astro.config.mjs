@@ -60,6 +60,10 @@ export default defineConfig({
           ],
         },
         {
+          label: "Plugins",
+          items: [{ label: "AI Plugins", slug: "plugin-config/ai-plugins" }],
+        },
+        {
           label: "Developers",
           items: [
             {
