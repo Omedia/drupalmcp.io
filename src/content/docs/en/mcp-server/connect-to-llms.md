@@ -50,6 +50,8 @@ To connect [Claude Desktop](https://claude.ai/download), add the MCP server conf
 
 You can also view and edit it from within Claude Desktop settings.
 
+##### STDIO Transport
+
 Paste the config object into that file. Don’t forget to update the credentials and `--network` value.
 
 ```json
@@ -79,6 +81,27 @@ Paste the config object into that file. Don’t forget to update the credentials
 }
 ```
 
+##### HTTP Transport
+
+To use Drupal MCP with Claude Desktop over HTTP transport, you’ll need a small helper because remote MCP servers aren’t supported **natively** yet. The package [MCP Remote](https://www.npmjs.com/package/mcp-remote) does the job. Just remember to replace the `url` value with the endpoint of your own Drupal MCP server.
+
+```json
+{
+  "mcpServers": {
+    "mcp-server-drupal": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://demo.drupalmcp.io/mcp/post",
+        "--transport",
+        "http-only",
+        "-y"
+      ]
+    }
+  }
+}
+```
+
 After saving the file, restart Claude Desktop. You should see your Drupal MCP server listed under servers, along with the number of tools (actions) it exposes. If you see that number, you're good to go.
 
 ![Claude Desktop tools count](/images/claude-tools.png)
@@ -94,8 +117,17 @@ claude mcp add --scope project mcp-server-drupal docker -e DRUPAL_AUTH_USER=admi
 Once set up, Claude Code will be able to talk to your Drupal site via MCP. If you’ve enabled the right MCP plugins, you’ll even be able to do things like create content types, add fields, and configure blocks — all from the terminal, without using the UI.
 
 ### Cursor
+To connect [Cursor](https://www.cursor.com/downloads), add the MCP server config to the `mcp.json` file. This file is located at:
 
-To use Drupal MCP with Cursor, you can use the exact same configuration as for Claude Desktop. Just remember to update the credentials and `--network`.
+- **Linux:** `~/.cursor/mcp.json`
+- **MacOS:** `~/.cursor/mcp.json`
+- **Windows:** `%USERPROFILE%\.cursor\mcp.json`
+
+You can also view and edit it from within Cursor settings.
+
+###### STDIO Transport
+
+To use Drupal MCP with Cursor using STDIO transport, you can use the exact same configuration as for Claude Desktop. Just remember to update the credentials and `--network`.
 
 ```json
 {
@@ -121,5 +153,20 @@ To use Drupal MCP with Cursor, you can use the exact same configuration as for C
     }
   },
   "globalShortcut": ""
+}
+```
+
+###### HTTP Transport
+
+To use Drupal MCP with Cursor over HTTP transport, use the configuration below. Just remember to replace the `url` value with the endpoint of your own Drupal MCP server.
+
+```json
+{
+  "mcpServers": {
+    "mcp-server-drupal": {
+      "type": "streamable-http",
+      "url": "https://demo.drupalmcp.io/mcp/post"
+    }
+  }
 }
 ```
