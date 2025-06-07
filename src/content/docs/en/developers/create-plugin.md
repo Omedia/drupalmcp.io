@@ -273,7 +273,7 @@ public function buildConfigurationForm(
 
 ### Tool IDs
 
-When the MCP module exposes tools to clients, it prefixes the tool name with the plugin ID and uses MD5 hash for security. In your `executeTool()` method, compare the incoming ID with the MD5 hash of your tool name.
+When the MCP module exposes tools to clients, it prefixes the tool name with the plugin ID and uses MD5 hash for compatibility with clients that have name length restrictions (e.g., Claude Desktop). In your `executeTool()` method, compare the incoming ID with the MD5 hash of your tool name.
 
 ### Resource URIs
 
