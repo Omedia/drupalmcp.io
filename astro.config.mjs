@@ -75,6 +75,7 @@ export default defineConfig({
             { label: "Contributing", slug: "developers/contributing" },
           ],
         },
+        { label: "Roadmap", slug: "roadmap" },
         // {
         //   label: "Resources",
         //   items: [
