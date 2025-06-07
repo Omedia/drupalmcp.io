@@ -54,11 +54,10 @@ When using AI plugins with MCP, keep these security aspects in mind:
 - Monitor AI function usage through Drupal's logs
 :::
 
-:::note[Best Practices]
-- Regularly review which AI functions are exposed through MCP
-- Use token authentication with specific user accounts rather than admin credentials
-- Enable only the AI functions that are necessary for your use case
-- Consider the implications of AI-generated content in your Drupal site
+:::note[Configuration Tips]
+- Review the AI functions exposed through MCP at `/admin/config/mcp`
+- Configure token authentication to use a dedicated Drupal user account
+- Enable only the specific AI functions required for your use case
 :::
 
 ## Next Steps

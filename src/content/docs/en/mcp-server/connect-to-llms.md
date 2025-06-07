@@ -12,10 +12,7 @@ Here’s the general config object used to add a Drupal MCP server for various L
 Replace `DRUPAL_AUTH_USER` and `DRUPAL_AUTH_PASSWORD` with the Drupal credentials you'd like the MCP server to use.
 
 :::caution[Security Note]
-The user account you specify must have the "Use MCP server" permission in Drupal. For security reasons:
-- Avoid using admin credentials in production environments
-- Create a dedicated user account with only the necessary permissions
-- Use token authentication for better security (see [STDIO Transport documentation](/en/mcp-server/stdio-transport/#authentication))
+The user account you specify must have the "Use MCP server" permission in Drupal. Create a dedicated Drupal user for MCP access with only the required permissions. See [STDIO Transport documentation](/en/mcp-server/stdio-transport/#authentication) for authentication options.
 :::
 
 **IMPORTANT:** If you're running Drupal locally with DDEV, you’ll need to specify the correct `--network` (check `docker network ls` for the name), and set the URL as `http://web`.  
@@ -130,3 +127,7 @@ To use Drupal MCP with Cursor, you can use the exact same configuration as for C
   "globalShortcut": ""
 }
 ```
+
+## Alternative: HTTP Transport
+
+If your MCP client supports streamable HTTP transport (like Cursor), you can connect directly to your Drupal site without the STDIO binary. This provides a simpler setup and is ideal for remote Drupal sites. See our [Streamable HTTP Transport](/en/mcp-server/streamable-http/) guide for configuration examples.

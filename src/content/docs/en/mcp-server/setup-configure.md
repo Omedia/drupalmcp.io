@@ -34,13 +34,12 @@ MCP comes with two optional submodules that provide useful plugins:
 - `mcp_dev_tools` — allows access to Drush from LLMs
 
 :::caution[Security Warning]
-The `mcp_dev_tools` module provides access to Drush commands through the MCP interface. This is a powerful feature that should be used with caution:
+The `mcp_dev_tools` module provides access to Drush commands through the MCP interface:
 
-- Only enable this module in trusted environments
-- Ensure proper authentication is configured
-- Users must have the "Use MCP server" permission
-- Consider restricting which commands are allowed through configuration
-- Be aware that this grants system-level access to your Drupal site
+- This module grants system-level access to your Drupal site
+- Users must have the "Use MCP server" permission in Drupal
+- Configure command restrictions in the module settings to limit available Drush commands
+- Use a dedicated Drupal user account with minimal permissions for MCP access
 :::
 
 Enabling both is highly recommended for getting the most out of MCP, but carefully consider the security implications.

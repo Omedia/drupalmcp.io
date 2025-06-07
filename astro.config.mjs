@@ -55,6 +55,7 @@ export default defineConfig({
           items: [
             { label: "Setup & Configure", slug: "mcp-server/setup-configure" },
             { label: "Connect to LLMs", slug: "mcp-server/connect-to-llms" },
+            { label: "Streamable HTTP", slug: "mcp-server/streamable-http" },
             { label: "STDIO Transport", slug: "mcp-server/stdio-transport" },
             { label: "What next?", slug: "mcp-server/what-next" },
           ],

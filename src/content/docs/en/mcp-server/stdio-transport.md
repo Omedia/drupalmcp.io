@@ -365,8 +365,7 @@ Make sure to turn the authentication on the Drupal MCP module settings page.
 :::caution[Security Requirements]
 - Users must have the "Use MCP server" permission in Drupal to access MCP
 - Token authentication can be configured to use a specific user account (recommended) instead of defaulting to the administrator account (UID 1)
-- Always use strong, unique tokens and credentials
-- Consider restricting MCP access to trusted environments only
+- For production sites, configure token authentication to use a dedicated Drupal user with limited permissions
 :::
 
 For token based authentication you can use the `DRUPAL_AUTH_TOKEN` environment variable. For basic authentication you can use `DRUPAL_AUTH_USER` and `DRUPAL_AUTH_PASSWORD` environment variables.
