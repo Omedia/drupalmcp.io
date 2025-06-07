@@ -11,6 +11,13 @@ Here’s the general config object used to add a Drupal MCP server for various L
 
 Replace `DRUPAL_AUTH_USER` and `DRUPAL_AUTH_PASSWORD` with the Drupal credentials you'd like the MCP server to use.
 
+:::caution[Security Note]
+The user account you specify must have the "Use MCP server" permission in Drupal. For security reasons:
+- Avoid using admin credentials in production environments
+- Create a dedicated user account with only the necessary permissions
+- Use token authentication for better security (see [STDIO Transport documentation](/en/mcp-server/stdio-transport/#authentication))
+:::
+
 **IMPORTANT:** If you're running Drupal locally with DDEV, you’ll need to specify the correct `--network` (check `docker network ls` for the name), and set the URL as `http://web`.  
 If your Drupal site is publicly accessible, you can skip the `--network` and use your full public URL instead.
 
@@ -32,8 +39,8 @@ If your Drupal site is publicly accessible, you can skip the `--network` and use
         "--drupal-url=http://web"
       ],
       "env": {
-        "DRUPAL_AUTH_USER": "admin",
-        "DRUPAL_AUTH_PASSWORD": "changeme"
+        "DRUPAL_AUTH_USER": "mcp_user",
+        "DRUPAL_AUTH_PASSWORD": "secure_password_here"
       }
     }
   },
@@ -70,8 +77,8 @@ Paste the config object into that file. Don’t forget to update the credentials
         "--drupal-url=http://web"
       ],
       "env": {
-        "DRUPAL_AUTH_USER": "admin",
-        "DRUPAL_AUTH_PASSWORD": "changeme"
+        "DRUPAL_AUTH_USER": "mcp_user",
+        "DRUPAL_AUTH_PASSWORD": "secure_password_here"
       }
     }
   },
@@ -88,7 +95,7 @@ After saving the file, restart Claude Desktop. You should see your Drupal MCP se
 As with Claude Desktop, you’ll need to run the MCP binary as a Docker container. Replace `--network`, `DRUPAL_AUTH_USER`, and `DRUPAL_AUTH_PASSWORD` as needed:
 
 ```bash
-claude mcp add --scope project mcp-server-drupal docker -e DRUPAL_AUTH_USER=admin -e DRUPAL_AUTH_PASSWORD=changeme -- run -i --rm -e DRUPAL_AUTH_USER -e DRUPAL_AUTH_PASSWORD --network=1bca71ea7302 ghcr.io/omedia/mcp-server-drupal:latest --drupal-url=http://web
+claude mcp add --scope project mcp-server-drupal docker -e DRUPAL_AUTH_USER=mcp_user -e DRUPAL_AUTH_PASSWORD=secure_password_here -- run -i --rm -e DRUPAL_AUTH_USER -e DRUPAL_AUTH_PASSWORD --network=1bca71ea7302 ghcr.io/omedia/mcp-server-drupal:latest --drupal-url=http://web
 ```
 
 Once set up, Claude Code will be able to talk to your Drupal site via MCP. If you’ve enabled the right MCP plugins, you’ll even be able to do things like create content types, add fields, and configure blocks — all from the terminal, without using the UI.
@@ -115,8 +122,8 @@ To use Drupal MCP with Cursor, you can use the exact same configuration as for C
         "--drupal-url=http://web"
       ],
       "env": {
-        "DRUPAL_AUTH_USER": "admin",
-        "DRUPAL_AUTH_PASSWORD": "changeme"
+        "DRUPAL_AUTH_USER": "mcp_user",
+        "DRUPAL_AUTH_PASSWORD": "secure_password_here"
       }
     }
   },
