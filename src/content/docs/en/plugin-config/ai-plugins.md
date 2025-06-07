@@ -43,6 +43,23 @@ After installing the required modules, you need to configure both the AI module 
 2. Set your configured provider as the default provider at `/admin/config/ai/settings` and save the configuration
 3. After the provider is configured, check that the MCP plugins `AI Agent Calling` and `AI Function Calling` are available and enabled at `/admin/config/mcp`
 
+## Security Considerations
+
+When using AI plugins with MCP, keep these security aspects in mind:
+
+:::caution[Access Control]
+- Users accessing AI functions through MCP must have the "Use MCP server" permission
+- AI functions may expose sensitive operations, so carefully review permissions
+- Consider creating dedicated user accounts with limited permissions for MCP access
+- Monitor AI function usage through Drupal's logs
+:::
+
+:::note[Configuration Tips]
+- Review the AI functions exposed through MCP at `/admin/config/mcp`
+- Configure token authentication to use a dedicated Drupal user account
+- Enable only the specific AI functions required for your use case
+:::
+
 ## Next Steps
 
 After configuring AI plugins, you might want to:
