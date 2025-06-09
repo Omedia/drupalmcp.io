@@ -41,7 +41,13 @@ The `--drupal-url` argument is the only required parameter. It must point to the
 :::
 
 :::tip[Local Environment]
-If you are running the Drupal site locally, make sure that URL is accessible from the Docker container. You can use `host.docker.internal` to refer to the host machine from within the container or pass the docker network with the `--network` argument.
+If you are running the Drupal site locally, make sure that URL is accessible from the Docker container. You have several options:
+
+1. **Using host networking (recommended for DDEV)**: Add `--network=host` to your Docker args. This allows the container to access your local services directly.
+2. **Using host.docker.internal**: Use `host.docker.internal` to refer to the host machine from within the container.
+3. **Using specific Docker network**: Pass the docker network name with the `--network` argument.
+
+For DDEV users, the `--network=host` option is often the simplest approach.
 
 If you want to use the self signed certificate you can use the `--unsafe-net` argument to disable the SSL verification. It will provide a better DX during the local development but it is not recommended for production.
 
@@ -66,9 +72,35 @@ If you want to use the self signed certificate you can use the `--unsafe-net` ar
 
 :::
 
-#### Docker Image Example
+#### Docker Image Examples
 
-The realistic example of the configuration for the Docker image:
+##### Example 1: Using host networking (recommended for DDEV)
+
+This configuration works well with DDEV and other local development environments:
+
+```json
+{
+  "mcpServers": {
+    "mcp-server-drupal": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--network=host",
+        "ghcr.io/omedia/mcp-server-drupal:latest",
+        "--drupal-url=https://netnode.nodehive.app.ddev.site",
+        "--unsafe-net"
+      ],
+      "env": {}
+    }
+  }
+}
+```
+
+##### Example 2: Using host.docker.internal
+
+For accessing DDEV sites without host networking:
 
 ```json
 {
@@ -360,6 +392,12 @@ The server supports both authentication via environment variables. You can use e
 
 :::note[Drupal Module Settings]
 Make sure to turn the authentication on the Drupal MCP module settings page.
+:::
+
+:::caution[Security Requirements]
+- Users must have the "Use MCP server" permission in Drupal to access MCP
+- Token authentication can be configured to use a specific user account (recommended) instead of defaulting to the administrator account (UID 1)
+- For production sites, configure token authentication to use a dedicated Drupal user with limited permissions
 :::
 
 For token based authentication you can use the `DRUPAL_AUTH_TOKEN` environment variable. For basic authentication you can use `DRUPAL_AUTH_USER` and `DRUPAL_AUTH_PASSWORD` environment variables.

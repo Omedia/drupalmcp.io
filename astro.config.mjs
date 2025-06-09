@@ -54,14 +54,24 @@ export default defineConfig({
           label: "MCP Server",
           items: [
             { label: "Setup & Configure", slug: "mcp-server/setup-configure" },
-            { label: "Connect to LLMs", slug: "mcp-server/connect-to-llms" },
-            { label: "STDIO Transport", slug: "mcp-server/stdio-transport" },
+            { 
+              label: "Connect to LLMs", 
+              items: [
+                { label: "Connect to LLMs", slug: "mcp-server/connect-to-llms" },
+                { label: "Streamable HTTP", slug: "mcp-server/streamable-http" },
+                { label: "STDIO Transport", slug: "mcp-server/stdio-transport" },
+              ]
+            },
             { label: "What next?", slug: "mcp-server/what-next" },
           ],
         },
         {
           label: "Plugins",
-          items: [{ label: "AI Plugins", slug: "plugin-config/ai-plugins" }],
+          items: [
+            { label: "AI Agents", slug: "plugin-config/ai-plugins" },
+            { label: "Dev Tools", slug: "plugin-config/dev-tools" },
+            { label: "ECA Actions", slug: "plugin-config/eca-actions", badge: { text: "Soon", variant: "caution" } }
+          ],
         },
         {
           label: "Developers",
@@ -72,6 +82,7 @@ export default defineConfig({
             },
             { label: "Create your Plugin", slug: "developers/create-plugin" },
             { label: "Contributing", slug: "developers/contributing" },
+            { label: "🚀 Roadmap", slug: "roadmap" },
           ],
         },
         // {

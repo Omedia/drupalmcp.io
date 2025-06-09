@@ -27,11 +27,6 @@ hero:
       icon: external
       variant: minimal
       target: _blank
-    - text: MCP Client Module
-      link: https://drupal.org/project/mcp_client
-      icon: external
-      variant: minimal
-      target: _blank
     - text: STDIO Binary
       link: https://github.com/omedia/mcp-server-drupal
       icon: external
@@ -47,25 +42,16 @@ import {Icon} from "astro-icon/components";
 </div>
 
 <CardGrid>
-  <Card title="MCP Server" icon="rocket">
+  <Card title="Drupal MCP Server Module" icon="rocket">
     Learn how to <a href="/en/mcp-server/setup-configure/">convert your Drupal site into an MCP server</a>.
   </Card>
-  <Card title="MCP Client" icon="laptop">
-    Check out the <a href="https://drupal.org/project/mcp_client">MCP Client module prototype on Drupal.org</a>.
+  <Card title="Roadmap" icon="seti:clock">
+    <a href="/en/roadmap/">Explore upcoming features</a> and future development plans for Drupal MCP module.
   </Card>
-  <Card title="Claude Desktop" icon="comment">
-    <a href="/en/mcp-server/connect-to-llms/#claude-desktop">Connect Claude Desktop</a> to your Drupal site.
+  <Card title="Connect to LLMs" icon="comment">
+    Connect your Drupal site to <a href="/en/mcp-server/connect-to-llms/#claude-desktop">Claude Desktop</a>, <a href="/en/mcp-server/connect-to-llms/#claude-code">Claude Code</a>, <a href="/en/mcp-server/connect-to-llms/#cursor">Cursor</a>, and other LLM applications.
   </Card>
-  <Card title="Claude Code" icon="seti:powershell">
-    <a href="/en/mcp-server/connect-to-llms/#claude-code">Connect Claude Code</a> to your Drupal site.
-  </Card>
-  <Card title="Cursor" icon="seti:html">
-    <a href="/en/mcp-server/connect-to-llms/#cursor">Connect Cursor</a> to your Drupal site.
-  </Card>
-  <Card title="STDIO Transport" icon="seti:plan">
-    <a href="/en/mcp-server/stdio-transport/">Use the STDIO binary</a> for seamless integration with LLM applications.
-  </Card>
-  <Card title="AI Plugins" icon="seti:info">
-    <a href="/en/plugin-config/ai-plugins/">Configure AI Plugins</a> to enable AI function call capabilities in your Drupal MCP server.
+  <Card title="Plugins" icon="seti:info">
+    <a href="/en/plugin-config/ai-plugins/">Configure AI agents</a> to extend your Drupal MCP server with custom tools and capabilities.
   </Card>
 </CardGrid>

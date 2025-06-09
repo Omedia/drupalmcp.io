@@ -178,11 +178,15 @@ This configuration service:
 Token-based authentication provides a simple, API key-like mechanism for MCP clients:
 
 - Uses a shared secret token stored via Drupal's Key module
-- Authenticates as the site's administrator account (UID 1)
+- Can be configured to authenticate as a specific user account (recommended) or default to the administrator account (UID 1)
 - Intended for trusted server-to-server communication
-- Offers high-privilege access with minimal setup complexity
+- Offers controlled access based on the configured user's permissions
 
 Token authentication is particularly useful for integration with local desktop applications or trusted services.
+
+:::caution[Security Update]
+As of version 1.1, token authentication can be configured to use a specific user account instead of defaulting to UID 1. This is strongly recommended for production environments to follow the principle of least privilege.
+:::
 
 ### Basic Authentication
 
@@ -198,6 +202,14 @@ This authentication method is well-suited for web clients and environments where
 ## Security Considerations
 
 The MCP authentication system implements several security best practices:
+
+### Required Permissions
+
+As of version 1.1, all users accessing MCP must have the "Use MCP server" permission:
+
+- This permission is required regardless of authentication method
+- Helps prevent unauthorized access to MCP functionality
+- Can be assigned to specific roles through Drupal's permission system
 
 ### Flood Protection
 
@@ -219,6 +231,13 @@ Token authentication relies on the Key module for secure secret storage:
 
 The system is designed to encourage appropriate privilege levels:
 
-- Token authentication clearly indicated as high-privilege
+- Token authentication can now be configured to use specific user accounts
 - Basic authentication tied to Drupal's permission system
 - Configuration settings to enable/disable specific authentication methods
+- Content types are opt-in by default to limit exposure
+
+### Additional Security Features (v1.1+)
+
+- **Content Type Restrictions**: Only explicitly enabled content types are exposed through MCP
+- **Command Restrictions**: The mcp_dev_tools module supports restricting which Drush commands can be executed
+- **User Selection**: Token authentication can be configured to use a specific user account instead of UID 1
