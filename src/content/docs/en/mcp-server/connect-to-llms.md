@@ -3,7 +3,7 @@ title: Connect to LLMs
 description: Connect to LLMs
 ---
 
-If you're using MCP clients that support HTTP, you can point them directly to your Drupal site URL — assuming you've [set up and configured the MCP server module](/en/mcp-server/setup-configure/) as described earlier.
+If you're using MCP clients that support HTTP, you can point them directly to your Drupal site URL — assuming you've [set up and configured the MCP server module](/en/mcp-server/setup-configure/) as described earlier. For more information about HTTP transport configuration, see the [Streamable HTTP](/en/mcp-server/streamable-http) page.
 
 All examples below use the STDIO transport, which means you'll need [our binary](/en/developers/stdio-binary/). Don't worry — it's fully dockerized, so in most cases, you won't even notice it running.
 

@@ -1,9 +1,9 @@
 ---
-title: AI Plugins Configuration
-description: How to configure AI plugins for the MCP module
+title: AI Agents Configuration
+description: How to configure AI agents for the MCP module
 ---
 
-This guide explains how to configure AI plugins for the MCP module, enabling AI function call capabilities in your Drupal MCP server.
+This guide explains how to configure AI agents for the MCP module, enabling AI function call capabilities in your Drupal MCP server.
 
 ## Prerequisites
 

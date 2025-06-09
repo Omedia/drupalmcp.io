@@ -4,5 +4,6 @@
       "WebFetch(domain:modelcontextprotocol.io)"
     ],
     "deny": []
-  }
+  },
+  "enableAllProjectMcpServers": false
 }

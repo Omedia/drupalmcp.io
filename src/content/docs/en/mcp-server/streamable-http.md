@@ -3,45 +3,24 @@ title: Streamable HTTP Transport
 description: Connect to your Drupal MCP server using HTTP transport
 ---
 
-Learn how to connect to your Drupal MCP server using the streamable HTTP transport, which enables direct HTTP-based communication between MCP clients and your Drupal site.
-
 ## What is Streamable HTTP Transport?
 
 Streamable HTTP transport is a modern communication protocol for MCP that uses standard HTTP requests with the ability to support streaming responses. It provides several advantages:
 
 - **Direct HTTP Communication**: Connect to your Drupal site without additional binaries or Docker containers
-- **Simplified Setup**: No need for STDIO transport binaries or complex configurations
 - **Remote Access**: Easily connect to publicly accessible Drupal sites
 - **Future Streaming Support**: Designed to support Server-Sent Events (SSE) for real-time communication
-
-### Use Cases
-
-- **Production Deployments**: Connect to remote Drupal sites without local infrastructure
-- **Cloud Environments**: Ideal for cloud-hosted Drupal installations
-- **Simplified Development**: Easier setup for developers without Docker experience
-- **Cross-Platform Support**: Works consistently across different operating systems
 
 :::note[Current Implementation]
 The Drupal MCP module currently supports HTTP transport without streaming capabilities. Full streaming support with Server-Sent Events (SSE) will be added in a future release. This means you can use all MCP features through standard HTTP POST requests, but real-time server-to-client communication is not yet available.
 :::
 
-## Prerequisites
-
-:::caution[Security Requirements]
+:::caution[Security]
 - Always use HTTPS in production environments
 - Users must have the "Use MCP server" permission in Drupal
 - Create dedicated MCP user accounts with only necessary permissions
 :::
 
-Before using HTTP transport, ensure:
-
-1. Your Drupal site has the MCP module installed and configured (see [Setup & Configure](/en/mcp-server/setup-configure/))
-2. Your Drupal site is accessible via HTTPS (for production) or HTTP (for local development)
-3. **Authentication is properly configured in the MCP module settings:**
-   - Enable authentication in the MCP configuration at `/admin/config/mcp`
-   - For token authentication: Create a token via Drupal's Key module
-   - For basic authentication: Ensure the user account has the "Use MCP server" permission
-   - Configure which content types should be exposed (opt-in by default)
 
 ## Configuration Examples
 
@@ -68,9 +47,6 @@ Claude Desktop doesn't natively support HTTP transport yet, but you can use the 
 
 Replace `https://your-drupal-site.com/mcp/post` with your actual Drupal site URL. The `/mcp/post` endpoint is the standard MCP HTTP endpoint provided by the Drupal module.
 
-:::note[Authentication with mcp-remote]
-For authenticated connections, you may need to include authentication headers. Check the mcp-remote documentation for the exact syntax, as it may require additional configuration parameters.
-:::
 
 ### Cursor
 

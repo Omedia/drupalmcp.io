@@ -26,30 +26,35 @@ ddev drush en mcp -y
 
 ## Enable plugins
 
-The MCP module uses a plugin-based architecture that lets developers extend its functionality. The core module handles the MCP protocol itself and serves as a foundation, but the actual actions and resources exposed to the outside world are defined by plugins. You can also [create your own custom plugin](/en/developers/create-plugin/).
+The MCP module uses a plugin-based architecture that lets developers extend its functionality. The core module handles the MCP protocol itself and serves as a foundation, but the actual actions and resources exposed to the outside world are defined by plugins.
+
+
+You can extend MCP functionality in several ways:
+- Use the optional submodules included with MCP (described below)
+- Install community-contributed plugins
+- [Create your own custom plugin](/en/developers/create-plugin/)
+
+### Optional submodules
 
 MCP comes with two optional submodules that provide useful plugins:
 
-- `mcp_extra` — exposes AI module function call actions (see [AI Plugins Configuration](/en/plugin-config/ai-plugins/))
-- `mcp_dev_tools` — allows access to Drush from LLMs
+- **[mcp_extra](/en/plugin-config/ai-plugins/)** - Exposes AI module function call actions, allowing MCP clients to leverage Drupal's AI capabilities
+- **[mcp_dev_tools](/en/plugin-config/dev-tools/)** - Provides controlled access to Drush commands through the MCP interface
 
-:::caution[Security Warning]
-The `mcp_dev_tools` module provides access to Drush commands through the MCP interface:
+You can enable these submodules individually based on your needs:
 
-- This module grants system-level access to your Drupal site
-- Users must have the "Use MCP server" permission in Drupal
-- Configure command restrictions in the module settings to limit available Drush commands
-- Use a dedicated Drupal user account with minimal permissions for MCP access
-:::
+```bash
+# Enable AI agents functionality
+ddev drush en mcp_extra
 
-Enabling both is highly recommended for getting the most out of MCP, but carefully consider the security implications.
+# Enable developer tools
+ddev drush en mcp_dev_tools
+```
+
+
 
 > *Note: for `mcp_extra` to expose AI function actions, you’ll need to install and enable the Drupal [AI module](https://drupal.org/project/ai).*
 
-```bash
-ddev drush en mcp_extra
-ddev drush en mcp_dev_tools
-```
 
 ## Configure
 
