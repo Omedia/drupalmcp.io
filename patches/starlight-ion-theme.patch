@@ -1,0 +1,41 @@
+diff --git a/index.ts b/index.ts
+index de7a064f13936f4a9947e4d8d4d1bb32d56e39b0..12d936930f94322f792f802db1d303e802a70cf3 100644
+--- a/index.ts
++++ b/index.ts
+@@ -27,7 +27,7 @@ interface FooterOptions {
+ interface Config {
+   /**
+    * Options passed to `astro-icon`. When setting the `iconDir` option, you must use the `resolve` function exported from this module to resolve the path.
+-   * 
++   *
+    * For more information, see the [astro-icon documentation](https://astroicon.dev).
+    */
+   icons: Parameters<typeof icon>[0];
+@@ -67,6 +67,8 @@ interface Config {
+      * Set to `false` to disable Ion's page title override. Defaults to `true`.
+      */
+     PageTitle?: boolean;
++
++
+   }
+ }
+ 
+@@ -111,8 +113,8 @@ function createPlugin(pluginConfig?: Config): StarlightPlugin {
+         addIntegration(integration(pluginConfig));
+         addIntegration(icon(pluginConfig ? pluginConfig.icons : undefined));
+ 
+-        const customCss = config.customCss 
+-          ? ['starlight-ion-theme/styles/theme.css', ...config.customCss] 
++        const customCss = config.customCss
++          ? ['starlight-ion-theme/styles/theme.css', ...config.customCss]
+           : ['starlight-ion-theme/styles/theme.css'];
+ 
+         if (pluginConfig?.useCustomECTheme !== false) {
+@@ -133,6 +135,7 @@ function createPlugin(pluginConfig?: Config): StarlightPlugin {
+         updateConfig({
+           customCss,
+           components: {
++            ...userSpecifiedComponents,
+             SiteTitle: userSpecifiedComponents.SiteTitle || enabledOverrides.SiteTitle !== false ? 'starlight-ion-theme/components/SiteTitle.astro' : undefined,
+             Sidebar: userSpecifiedComponents.Sidebar || enabledOverrides.Sidebar !== false ? 'starlight-ion-theme/components/Sidebar.astro' : undefined,
+             Pagination: userSpecifiedComponents.Pagination || enabledOverrides.Pagination !== false ? 'starlight-ion-theme/components/Pagination.astro' : undefined,
