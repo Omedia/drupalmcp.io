@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  starlight-ion-theme:
+    hash: 5d86f899e351f57960f9b61344af4d85c8a131c980518f34e4dfac3f99b79632
+    path: patches/starlight-ion-theme.patch
+
 importers:
 
   .:
@@ -28,7 +33,7 @@ importers:
         version: 0.34.0
       starlight-ion-theme:
         specifier: ^2.2.3
-        version: 2.2.3(@astrojs/starlight@0.32.6(astro@5.6.1(rollup@4.39.0)(typescript@5.8.3)))(astro@5.6.1(rollup@4.39.0)(typescript@5.8.3))
+        version: 2.2.3(patch_hash=5d86f899e351f57960f9b61344af4d85c8a131c980518f34e4dfac3f99b79632)(@astrojs/starlight@0.32.6(astro@5.6.1(rollup@4.39.0)(typescript@5.8.3)))(astro@5.6.1(rollup@4.39.0)(typescript@5.8.3))
 
 packages:
 
@@ -4689,7 +4694,7 @@ snapshots:
 
   space-separated-tokens@2.0.2: {}
 
-  starlight-ion-theme@2.2.3(@astrojs/starlight@0.32.6(astro@5.6.1(rollup@4.39.0)(typescript@5.8.3)))(astro@5.6.1(rollup@4.39.0)(typescript@5.8.3)):
+  starlight-ion-theme@2.2.3(patch_hash=5d86f899e351f57960f9b61344af4d85c8a131c980518f34e4dfac3f99b79632)(@astrojs/starlight@0.32.6(astro@5.6.1(rollup@4.39.0)(typescript@5.8.3)))(astro@5.6.1(rollup@4.39.0)(typescript@5.8.3)):
     dependencies:
       '@astrojs/starlight': 0.32.6(astro@5.6.1(rollup@4.39.0)(typescript@5.8.3))
       '@iconify/tools': 4.1.2
