@@ -89,7 +89,7 @@ This configuration works well with DDEV and other local development environments
         "--rm",
         "--network=host",
         "ghcr.io/omedia/mcp-server-drupal:latest",
-        "--drupal-url=https://netnode.nodehive.app.ddev.site",
+        "--drupal-url=__DRUPAL_BASE_URL_",
         "--unsafe-net"
       ],
       "env": {}
